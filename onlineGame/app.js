@@ -7,11 +7,11 @@
     var lastRender = Date.now();
 
     var c = document.getElementById("canvas");
-    var plocha = document.getElementById("plocha");
+    // var plocha = document.getElementById("plocha");
     var ctx = c.getContext("2d");
 
-    c.width = plocha.offsetWidth;
-    c.height = plocha.offsetHeight;
+    // c.width = plocha.offsetWidth;
+    // c.height = plocha.offsetHeight;
 
     let speed = 300; // 20px za sekundu
     var right = false;
