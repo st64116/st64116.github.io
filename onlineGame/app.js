@@ -41,6 +41,7 @@
                 players[playerId].y = (parseInt(players[playerId].y) - 5);
                 console.log(players[playerId].x);
             }
+            playerRef.set(players[playerId]);
         }
 
         const allPlayersRef = firebase.database().ref(`players`);
