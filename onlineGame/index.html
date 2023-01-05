@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>nvm</h1>
+<canvas width="500" height="500" class="plocha" id="canvas"></canvas>
+<div class="game-container"></div>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<script>
+
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyA8xe-3zQeRuRcMKiSrAZWxMMUGcegedm4",
+        authDomain: "onlinegame-b38c7.firebaseapp.com",
+        databaseURL: "https://onlinegame-b38c7-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "onlinegame-b38c7",
+        storageBucket: "onlinegame-b38c7.appspot.com",
+        messagingSenderId: "548268218639",
+        appId: "1:548268218639:web:d4a7d086d13dd15b59c67a",
+        measurementId: "G-E6GT9P5E4Y"
+    };
+    firebase.initializeApp(firebaseConfig);
+    // const app = initializeApp(firebaseConfig);
+    // const analytics = getAnalytics(app);
+</script>
+<script src="app.js"></script>
+</body>
+</html>
