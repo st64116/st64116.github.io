@@ -1,4 +1,3 @@
-
 (function () {
     let playerId;
     let playerRef;
@@ -10,11 +9,11 @@
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
-    function draw(){
+    function draw() {
         var progress = lastRender - Date.now();
         lastRender = Date.now();
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        Object.keys(players).forEach((key)=>{
+        Object.keys(players).forEach((key) => {
             ctx.beginPath();
             ctx.rect(players[key].x, players[key].y, 50, 50);
             ctx.fillStyle = players[key].color;
@@ -24,12 +23,29 @@
         window.requestAnimationFrame(draw);
     }
 
-    function initGame(){
+    function initGame() {
 
+        window.onkeydown = function (e) {
+            if (e.key === "ArrowRight") {
+                players[playerId].x = (parseInt(players[playerId].x) + 5);
+            }
+            if (e.key === "ArrowLeft") {
+                players[playerId].x = (parseInt(players[playerId].x) - 5);
+                console.log(players[playerId].x);
+            }
+            if (e.key === "ArrowDown") {
+                players[playerId].y = (parseInt(players[playerId].y) + 5);
+                console.log(players[playerId].x);
+            }
+            if (e.key === "ArrowUp") {
+                players[playerId].y = (parseInt(players[playerId].y) - 5);
+                console.log(players[playerId].x);
+            }
+        }
 
         const allPlayersRef = firebase.database().ref(`players`);
 
-        allPlayersRef.on("value", (snapshot)=>{
+        allPlayersRef.on("value", (snapshot) => {
             players = snapshot.val() || {};
             console.log("valueeeee");
             console.log(players);
